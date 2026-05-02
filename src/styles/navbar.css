@@ -1,0 +1,29 @@
+/*
+    styling buat navbar (Navbar.jsx)
+*/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #6FAF73;
+}
+
+
+.navbar h2 {
+    margin: 0;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}

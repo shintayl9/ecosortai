@@ -1,0 +1,43 @@
+/* styling untuk homepage (Home.jsx) */
+
+.home {
+    height: 100vh;
+    background: linear-gradient(to bottom, #79AE6F, #FFFFFF); /* gradient */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-text {
+    max-width: 500px;
+}
+
+.home-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.home-text button {
+    padding: 10px 20px;
+    background-color: #79AE6F;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.home-image img {
+    width: 300px;
+}
