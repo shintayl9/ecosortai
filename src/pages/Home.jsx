@@ -19,9 +19,31 @@ function Home() {
 
                 {/* gambar bagian kanan */}
                 <div className="home-image">
-                    <img src="/public/logo.png" alt="Logo" />
+                    <img src="/logo-removebg-preview.png" alt="Logo" />
                 </div>
             </div>
+
+            <section className="how-it-works">
+                <h2>Cara Kerja</h2>
+                <p>Kelola sampahmu hanya dalam 3 langkah mudah</p>
+
+                <div className="steps">
+                    <div className="step-card">
+                        <img src="/icon-upload.png" alt="" />
+                        <p>Upload Gambar</p>
+                    </div>
+
+                    <div className="step-card">
+                        <img src="/icon-analisis.png" alt="" />
+                        <p>AI Menganalisis</p>
+                    </div>
+
+                    <div className="step-card">
+                        <img src="/icon-hasil.png" alt="" />
+                        <p>Hasil Klasifikasi</p>
+                    </div>
+                </div>
+            </section>
         </section>
     );
 }

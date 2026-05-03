@@ -1,43 +1,101 @@
 /* styling untuk homepage (Home.jsx) */
 
 .home {
-    height: 100vh;
-    background: linear-gradient(to bottom, #79AE6F, #FFFFFF); /* gradient */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+    /* gradient */
+    background: linear-gradient(to bottom, #79AE6F, #FFFFFF);
 }
 
+/* container utama */
 .home-content {
-    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 80px 100px;
+    margin-bottom: 80px;
 }
 
+/* teks kiri */
 .home-text {
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .home-text h1 {
-    font-size: 48px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #2E2E2E;
     margin-bottom: 20px;
 }
 
 .home-text p {
     font-size: 18px;
-    margin-bottom: 20px;
+    color: #5A5A5A;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .home-text button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #79AE6F;
     border: none;
     border-radius: 8px;
     color: white;
+    font-weight: 500;
     cursor: pointer;
 }
 
+/* gambar logo kanan */
 .home-image img {
     width: 300px;
+}
+
+/* cara kerja bawah hero */
+.how-it-works {
+    text-align: center;
+    padding: 60px 20px;
+    background: transparent;
+}
+
+/* judul */
+.how-it-works h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* deskripsi */
+.how-it-works p {
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+/* card container */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+/* card bulat */
+.step-card {
+    width: 180px;
+    height: 180px;
+    background: white;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-card img {
+    width: 40px;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 14px;
+    margin: 0;
 }
