@@ -47,7 +47,7 @@
     width: 300px;
 }
 
-/* Cara Kerja bawah hero */
+/* =========== Cara Kerja bawah hero =========== */
 .how-it-works {
     text-align: center;
     padding: 60px 20px;
@@ -98,7 +98,7 @@
     margin: 0;
 }
 
-/* ECO Knowledge */
+/* ============= ECO Knowledge ========== */
 .eco-knowledge {
     text-align: center;
     padding: 80px 20px;
@@ -215,4 +215,60 @@
     padding: 8px 14px;
     border-radius: 15px;
     cursor: pointer;
+}
+
+/* =========== Footer ============= */
+.footer {
+    background: #79AE6F;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* atas */
+.footer-top h3 {
+    margin-bottom: 10px;
+}
+
+.footer-top p {
+    margin-bottom: 20px;
+}
+
+/* tengah */
+.footer-middle {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* bawah */
+.footer-bottom p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* icon medsos */
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
 }
