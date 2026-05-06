@@ -11,14 +11,14 @@ function Hasil() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // 🔥 DATA DARI HALAMAN SEBELUMNYA
+  // DATA DARI HALAMAN SEBELUMNYA
   const hasilDariAI = location.state?.hasil || "organik";
   const imageDariAI =
     location.state?.image || "https://via.placeholder.com/250";
 
   const [feedback, setFeedback] = useState(null);
 
-  // 🔥 DATA DESKRIPSI (TIDAK ADA IMAGE LAGI DI SINI)
+  // DATA DESKRIPSI 
   const hasilData = {
     organik: {
       result: "foto yang kamu kirim termasuk sampah Organik",
