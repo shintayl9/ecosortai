@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/home.css";
+import "../styles/About.css";
 
 import shinta from "../assets/picpencipta/shinta.jpg";
 import wanda from "../assets/picpencipta/wanda.jpg";

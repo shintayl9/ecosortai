@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/home.css";
+import "../styles/Hasil.css";
 
 // ROUTER
 import { useLocation, useNavigate } from "react-router-dom";
