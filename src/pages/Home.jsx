@@ -3,121 +3,134 @@ import "../styles/home.css"
 
 function Home() {
     return (
-        <section className="home">
-            <div className="home-content">
-                <div className="home-text">
-                    <h1>EcoSortAI</h1>
-                    <p>
-                        Platform berbasis AI untuk klasifikasi sampah dan solusi pengelolaannya yang cerdas.
-                    </p>
-                    <button>Cek Sampahmu disini!</button>
-                </div>
+        <div className="home">
 
-                {/* gambar bagian kanan */}
-                <div className="home-image">
-                    <img src="/logo-removebg-preview.png" alt="Logo" />
+            {/* HERO SECTION */}
+            <section className="hero-section">
+                <div className="wrapper">
+                    <div className="hero-content">
+                        <div className="hero-text">
+                            <h1>EcoSortAI</h1>
+                            <p>
+                                Platform berbasis AI untuk klasifikasi sampah dan solusi pengelolaannya yang cerdas.
+                            </p>
+                            <button className="cta-button">Cek Sampahmu disini!</button>
+                        </div>
+                        <div className="hero-image">
+                            <img src="/logo-removebg-preview.png" alt="Logo" />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
+            {/* CARA KERJA */}
             <section className="how-it-works">
-                <h2>Cara Kerja</h2>
-                <p>Kelola sampahmu hanya dalam 3 langkah mudah</p>
+                <div className="wrapper">
+                    <h2>Cara Kerja</h2>
+                    <p className="subtitle">Kelola sampahmu hanya dalam 3 langkah mudah</p>
 
-                <div className="steps">
-                    <div className="step-card">
-                        <img src="/icon-upload.png" alt="" />
-                        <p>Upload Gambar</p>
-                    </div>
+                    <div className="steps-container">
+                        <div className="step-card">
+                            <div className="step-icon">
+                                <img src="/icon-upload.png" alt="Upload" />
+                                <p>Upload Gambar</p>
+                            </div>
+                        </div>
 
-                    <div className="step-card">
-                        <img src="/icon-analisis.png" alt="" />
-                        <p>AI Menganalisis</p>
-                    </div>
+                        <div className="step-card">
+                            <div className="step-icon">
+                                <img src="/icon-analisis.png" alt="Analisis" />
+                                <p>AI Menganalisis</p>
+                            </div>
+                        </div>
 
-                    <div className="step-card">
-                        <img src="/icon-hasil.png" alt="" />
-                        <p>Hasil Klasifikasi</p>
+                        <div className="step-card">
+                            <div className="step-icon">
+                                <img src="/icon-hasil.png" alt="Hasil" />
+                                <p>Hasil Klasifikasi</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            {/* ECO KNOWLEDGE */}
             <section className="eco-knowledge">
-                <h2>ECO Knowledge</h2>
-                <p>Ubah Cara Kamu Melihat Sampah Mulai hari ini</p>
+                <div className="wrapper">
+                    <h2>ECO Knowledge</h2>
+                    <p className="subtitle">Ubah Cara Kamu Melihat Sampah Mulai hari ini</p>
 
-                {/* tombol try ai */}
-                <button className="try-btn">Try AI</button>
+                    <button className="try-btn">Try AI</button>
 
-                <div className="eco-container">
-                    {/* card sebelah kiri */}
-                    <div className="eco-left">
-                        <div className="eco-card big">
+                    <div className="eco-container">
+                        {/* Card Kiri - Besar */}
+                        <div className="eco-card-large">
                             <h4>Mengapa Sampah Menjadi Masalah Besar di Indonesia?</h4>
-                            <img src="/card-left-homepage.png" alt="" />
-                            <span>26 April 2026 | 11.28</span>
-                            <button>Baca Selengkapnya</button>
+                            <img src="/card-left-homepage.png" alt="Sampah Indonesia" />
+                            <span className="date">26 April 2026 | 11.28</span>
+                            <button className="read-more">Baca Selengkapnya</button>
                         </div>
-                    </div>
 
-                    {/* 2 card sebelah kanan */}
-                    <div className="eco-right">
-                        <div className="eco-card small">
-                            <div className="card-content">
-                                <img src="/card-right-1.jpg" alt="" />
-                                <div className="text">
-                                    <h4>Jenis Sampah</h4>
-                                    <span>26 April 2026 | 11.28</span>
-                                    <p>Penjelasan singkat jenis sampah...</p>
-                                    <button>Baca Selengkapnya</button>
+                        {/* Card Kanan */}
+                        <div className="eco-card-stack">
+                            <div className="eco-card-small">
+                                <div className="card-content">
+                                    <img src="/card-right-1.jpg" alt="Jenis Sampah" />
+                                    <div className="card-text">
+                                        <h4>Jenis Sampah</h4>
+                                        <p>Penjelasan singkat tentang berbagai jenis sampah organik dan anorganik...</p>
+                                        <span className="date">26 April 2026 | 11.28</span>
+                                    </div>
                                 </div>
+                                <button className="read-more">Baca Selengkapnya</button>
+                            </div>
+
+                            <div className="eco-card-small">
+                                <div className="card-content">
+                                    <img src="/card-right-2.jpg" alt="Waktu Terurai" />
+                                    <div className="card-text">
+                                        <h4>Waktu Terurai</h4>
+                                        <p>Penjelasan singkat lama waktu sampah terurai di lingkungan...</p>
+                                        <span className="date">26 April 2026 | 11.28</span>
+                                    </div>
+                                </div>
+                                <button className="read-more">Baca Selengkapnya</button>
                             </div>
                         </div>
-
-                        <div className="eco-card small">
-                            <div className="card-content">
-                                <img src="/card-right-2.jpg" alt="" />
-                                <div className="text">
-                                    <h4>Waktu Terurai</h4>
-                                    <span>26 April 2026 | 11.28</span>
-                                    <p>Penjelasan singkat lama waktu sampah terurai di lingkungan...</p>
-                                    <button>Baca Selengkapnya</button>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </section>
 
-            {/* Footer */}
+            {/* FOOTER */}
             <footer className="footer">
-                <div className="footer-top">
+                <div className="wrapper">
+                    {/* Bagian atas: judul dan deskripsi */}
                     <h3>Tim Capstone Project CC26</h3>
-                    <p>Solusi cerdas pengelolaan sampah berbasis AI.</p>
-                </div>
+                    <p className="footer-desc">Solusi cerdas pengelolaan sampah berbasis AI.</p>
 
-                <div className="footer-middle">
-                    <span>EcoSortAI © 2026</span>
+                    {/* Baris utama: copyright, nav vertikal, email + social icons */}
+                    <div className="footer-main-row">
+                        <p className="copyright">EcoSortAI © 2026</p>
 
-                    <div className="footer-links">
-                        <a href="#">How It Works</a>
-                        <a href="#">Upload</a>
-                        <a href="#">About</a>
-                    </div>
-                </div>
+                        <div className="footer-nav-vertical">
+                            <a href="#">How it Works</a>
+                            <a href="#">Upload</a>
+                            <a href="#">About</a>
+                        </div>
 
-                <div className="footer-buttom">
-                    <p>CC26-PSU026@student.devacademy.id</p>
-
-                    <div className="social-icons">
-                        <img src="/icon-instagram.png" alt="Instagram" />
-                        <img src="/icon-whatsapp.png" alt="WhatsApp" />
-                        <img src="/icon-youtube.png" alt="YouTube" />
+                        <div className="footer-right-col">
+                            <p className="footer-email">CC26-PSU026@student.devacademy.id</p>
+                            <div className="social-icons">
+                                <img src="/icon-instagram.png" alt="Instagram" />
+                                <img src="/icon-whatsapp.png" alt="WhatsApp" />
+                                <img src="/icon-youtube.png" alt="YouTube" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>
 
-        </section>
+        </div>
     );
 }
 
