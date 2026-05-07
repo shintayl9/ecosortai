@@ -1,7 +1,9 @@
 /* =========================
    ABOUT PAGE STYLING
    ========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* CONTAINER */
 .about-container {
   font-family: 'Poppins', sans-serif;
@@ -10,9 +12,9 @@
 
 /* HEADER */
 .about-header {
-  background: linear-gradient(to bottom, #79AE6F, #FFFFFF);
+  background: linear-gradient(to bottom, #79AE6F 0%, #A9D3A2 35%, #FFFFFF 100%);
   text-align: center;
-  padding: 40px;
+  padding: 55px 20px 70px;
 }
 
 .about-image {
@@ -21,7 +23,7 @@
 
 /* CONTENT */
 .about-content {
-  padding: 40px;
+  padding: 20px 40px 70px;
   max-width: 1200px;
   margin: auto;
 }
@@ -32,40 +34,44 @@
   text-align: center;
 }
 
-/* TEAM */
+/* TEAM TITLE */
 .team-title {
   text-align: center;
-  font-size: 40px;
-  margin-bottom: 40px;
-  color: #000000;
+  font-size: 42px;
+  margin-bottom: 50px;
+  color: #2E2E2E;
+  font-weight: 700;
 }
 
 /* GRID */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 45px;
 }
 
 /* ITEM */
 .team-item {
   position: relative;
+  padding-left: 40px;
 }
 
 /* FOTO */
 .team-photo {
-  width: 120px;
-  height: 120px;
+  width: 135px;
+  height: 135px;
   border-radius: 50%;
   object-fit: cover;
 
   position: absolute;
-  left: -35px;
+  left: -28px;
   top: 50%;
   transform: translateY(-50%);
 
-  border: 5px solid white;
+  border: 6px solid white;
   z-index: 2;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 /* CARD */
@@ -73,38 +79,50 @@
   background: #79AE6F;
   color: white;
 
-  padding: 28px 25px 28px 120px;
+  padding: 28px 28px 28px 120px;
 
-  border-radius: 22px;
-  height: 190px;
+  border-radius: 24px;
+
+  min-height: 190px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
 
-  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
   transition: 0.3s ease;
+
+  position: relative;
 }
 
 .team-card:hover {
   transform: translateY(-6px);
 }
 
+/* TEXT WRAPPER */
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  max-width: 78%;
+}
+
 /* NAMA */
 .team-name {
-  margin: 0;
-  font-size: 24px;
+  margin: 0 0 10px;
+  font-size: 26px;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.2;
-  max-width: 320px;
+  line-height: 1.25;
+
+  word-break: break-word;
 }
 
 /* KAMPUS */
 .team-campus {
-  margin-top: 8px;
-  margin-bottom: 4px;
+  margin: 0 0 6px;
 
   font-size: 17px;
   font-weight: 600;
@@ -116,18 +134,21 @@
   margin: 0;
 
   font-size: 15px;
-  color: #ffffff;
+  color: #F2F2F2;
+  font-weight: 400;
 }
 
 /* SOCIAL ICON */
-.social-icons {
+.about-social-icons {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+
   display: flex;
-  gap: 16px;
-  margin-top: 16px;
-  align-self: flex-end;
+  gap: 14px;
 }
 
-.social-icons img {
+.about-social-icons img {
   width: 24px;
   height: 24px;
 
@@ -137,21 +158,81 @@
   transition: 0.3s ease;
 }
 
-.social-icons img:hover {
+.about-social-icons img:hover {
   transform: scale(1.15);
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .team-item {
+    padding-left: 25px;
+  }
+
+  .team-photo {
+    width: 115px;
+    height: 115px;
+    left: -20px;
   }
 
   .team-card {
-    padding-left: 80px;
+    padding: 26px 24px 80px 100px;
+    min-height: 200px;
   }
 
   .team-name {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .team-info {
+    max-width: 100%;
+  }
+
+  .social-icons {
+    left: 100px;
+    bottom: 24px;
+    right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .about-header {
+    padding: 45px 20px 60px;
+  }
+
+  .team-title {
+    font-size: 34px;
+  }
+
+  .team-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-card {
+    padding: 24px 20px 80px 90px;
+  }
+
+  .team-name {
+    font-size: 20px;
+  }
+
+  .team-campus {
+    font-size: 15px;
+  }
+
+  .team-path {
+    font-size: 14px;
+  }
+
+  .social-icons img {
+    width: 22px;
+    height: 22px;
   }
 }

@@ -3,14 +3,21 @@
 .upload-page {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #79AE6F, #FFFFFF);
+
+  background: linear-gradient(
+    to bottom,
+    #79AE6F 0%,
+    #dcefd7 40%,
+    #ffffff 100%
+  );
+
   padding: 50px 20px;
 }
 
 /* HEADER */
 .upload-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .upload-header h1 {
@@ -39,9 +46,13 @@
   border: 3px dashed #79AE6F;
   border-radius: 30px;
 
-  padding: 60px 40px;
+  /* KOTAK LEBIH KECIL */
+  max-width: 650px;
+  margin: auto;
 
-  min-height: 450px;
+  padding: 50px 35px;
+
+  min-height: 400px;
 
   display: flex;
   flex-direction: column;
@@ -140,6 +151,7 @@
 
   .upload-box {
     padding: 40px 20px;
+    min-height: 350px;
   }
 
   .upload-text {

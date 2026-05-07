@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/upload.css";
 
 function Upload() {
   const [image, setImage] = useState(null);
+
+  const navigate = useNavigate();
 
   // HANDLE UPLOAD
   const handleImageChange = (e) => {
@@ -14,6 +17,11 @@ function Upload() {
         preview: URL.createObjectURL(file),
       });
     }
+  };
+
+  // HAPUS GAMBAR
+  const removeImage = () => {
+    setImage(null);
   };
 
   return (
@@ -41,13 +49,18 @@ function Upload() {
                 className="upload-icon"
               />
 
-              <p className="upload-text">Drop file here</p>
+              <p className="upload-text">
+                Drop file here
+              </p>
 
-              <span className="upload-or">OR</span>
+              <span className="upload-or">
+                OR
+              </span>
 
               {/* INPUT */}
               <label className="upload-btn">
                 Upload File
+
                 <input
                   type="file"
                   accept="image/*"
@@ -58,18 +71,36 @@ function Upload() {
             </>
           ) : (
             <>
-              {/* PREVIEW */}
-              <img
-                src={image.preview}
-                alt="Preview"
-                className="preview-image"
-              />
+              {/* PREVIEW WRAPPER */}
+              <div className="preview-wrapper">
 
+                {/* BUTTON X */}
+                <button
+                  className="remove-image"
+                  onClick={removeImage}
+                >
+                  ✕
+                </button>
+
+                {/* PREVIEW IMAGE */}
+                <img
+                  src={image.preview}
+                  alt="Preview"
+                  className="preview-image"
+                />
+
+              </div>
+
+              {/* FILE NAME */}
               <p className="file-name">
                 {image.file.name}
               </p>
 
-              <button className="submit-btn">
+              {/* SUBMIT */}
+              <button
+                className="submit-btn"
+                onClick={() => navigate("/history")}
+              >
                 Submit
               </button>
             </>
