@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.history-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(
+    to bottom,
+    #eef8ee,
+    #ffffff
+  );
+  font-family: 'Poppins', sans-serif;
+}
+
+.history-page h1 {
+  text-align: center;
+  font-size: 38px;
+  color: #456b45;
+  margin-bottom: 10px;
+}
+
+.history-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* ===== GRID ===== */
+
+.history-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 25px;
+}
+
+/* ===== CARD ===== */
+
+.history-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+}
+
+.history-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ===== CONTENT ===== */
+
+.history-content {
+  padding: 20px;
+}
+
+.kategori {
+  display: inline-block;
+  background: #dff3df;
+  color: #4d7c4d;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.history-content p {
+  color: #777;
+  font-size: 14px;
+}

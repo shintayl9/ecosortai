@@ -99,7 +99,13 @@ function Upload() {
               {/* SUBMIT */}
               <button
                 className="submit-btn"
-                onClick={() => navigate("/history")}
+                onClick={() =>
+                  navigate("/loading", {
+                    state: {
+                      image: image.preview,
+                    },
+                  })
+                }              
               >
                 Submit
               </button>

@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import HowItWorks from "./pages/HowItWorks";
 import Upload from "./pages/Upload"
+import Loading from "./pages/Loading";
 import Hasil from "./pages/Hasil";
 import History from "./pages/History";
 import Article from "./pages/Article";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/loading" element={<Loading />} />
         <Route path="/hasil" element={<Hasil />} />
         <Route path="/history" element={<History />} />
         <Route path="/article" element={<Article />} />

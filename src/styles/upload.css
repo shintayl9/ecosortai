@@ -46,13 +46,12 @@
   border: 3px dashed #79AE6F;
   border-radius: 30px;
 
-  /* KOTAK LEBIH KECIL */
-  max-width: 650px;
+  max-width: 700px;
   margin: auto;
 
   padding: 50px 35px;
 
-  min-height: 400px;
+  min-height: 500px;
 
   display: flex;
   flex-direction: column;
@@ -98,23 +97,78 @@
 
 .upload-btn:hover {
   transform: translateY(-3px);
+  background: #6b9f62;
 }
 
-/* PREVIEW */
-.preview-image {
-  width: 300px;
-  max-width: 100%;
+/* PREVIEW WRAPPER */
+.preview-wrapper {
+  position: relative;
 
-  border-radius: 20px;
-  object-fit: cover;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   margin-bottom: 20px;
 }
 
+/* PREVIEW IMAGE */
+.preview-image {
+  width: 100%;
+  max-width: 520px;
+  height: 340px;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+
+  border: 3px solid #e6f3e2;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* BUTTON X */
+.remove-image {
+  position: absolute;
+
+  top: -15px;
+  right: 55px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: white;
+  color: #79AE6F;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+  transition: 0.3s ease;
+
+  z-index: 2;
+}
+
+.remove-image:hover {
+  transform: scale(1.1);
+}
+
+/* FILE NAME */
 .file-name {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 25px;
+  font-size: 17px;
+  color: #555;
+
+  margin-bottom: 28px;
+
+  max-width: 90%;
+  word-break: break-word;
 }
 
 /* SUBMIT BUTTON */
@@ -123,7 +177,7 @@
   color: white;
 
   border: none;
-  padding: 14px 40px;
+  padding: 15px 42px;
 
   border-radius: 40px;
 
@@ -131,11 +185,15 @@
   font-weight: 600;
 
   cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(121,174,111,0.3);
+
   transition: 0.3s ease;
 }
 
 .submit-btn:hover {
   transform: translateY(-3px);
+  background: #6b9f62;
 }
 
 /* RESPONSIVE */
@@ -151,7 +209,7 @@
 
   .upload-box {
     padding: 40px 20px;
-    min-height: 350px;
+    min-height: 420px;
   }
 
   .upload-text {
@@ -163,6 +221,10 @@
   }
 
   .preview-image {
-    width: 220px;
+    height: 240px;
+  }
+
+  .remove-image {
+    right: 10px;
   }
 }
