@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.upload-page {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #79AE6F, #FFFFFF);
+  padding: 50px 20px;
+}
+
+/* HEADER */
+.upload-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.upload-header h1 {
+  font-size: 48px;
+  color: #354540;
+  font-weight: 700;
+}
+
+/* CONTENT */
+.upload-content {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.upload-content h2 {
+  font-size: 36px;
+  color: #2E2E2E;
+  margin-bottom: 40px;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+  background: white;
+
+  border: 3px dashed #79AE6F;
+  border-radius: 30px;
+
+  padding: 60px 40px;
+
+  min-height: 450px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.upload-icon {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+.upload-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2E2E2E;
+}
+
+.upload-or {
+  margin: 18px 0;
+  color: #888;
+  font-size: 18px;
+}
+
+/* BUTTON */
+.upload-btn {
+  background: #79AE6F;
+  color: white;
+
+  padding: 14px 32px;
+  border-radius: 40px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.upload-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* PREVIEW */
+.preview-image {
+  width: 300px;
+  max-width: 100%;
+
+  border-radius: 20px;
+  object-fit: cover;
+
+  margin-bottom: 20px;
+}
+
+.file-name {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  background: #79AE6F;
+  color: white;
+
+  border: none;
+  padding: 14px 40px;
+
+  border-radius: 40px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .upload-header h1 {
+    font-size: 38px;
+  }
+
+  .upload-content h2 {
+    font-size: 28px;
+  }
+
+  .upload-box {
+    padding: 40px 20px;
+  }
+
+  .upload-text {
+    font-size: 22px;
+  }
+
+  .upload-icon {
+    width: 90px;
+  }
+
+  .preview-image {
+    width: 220px;
+  }
+}

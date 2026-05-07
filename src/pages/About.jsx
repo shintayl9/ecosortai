@@ -1,50 +1,68 @@
 import React from "react";
 import "../styles/About.css";
 
-import shinta from "../assets/picpencipta/shinta.jpg";
-import wanda from "../assets/picpencipta/wanda.jpg";
-import nurvi from "../assets/picpencipta/nurvi.jpg";
-import nasywa from "../assets/picpencipta/nasywa.jpg";
-import jumail from "../assets/picpencipta/jumail.jpg";
-import bili from "../assets/picpencipta/bili.jpg";
-import ecoEarth from "../assets/planet-earth.png";
 
 const teamData = [
   {
     name: "Shinta Yulistiana",
-    path: "Fullstack Developer",
     kampus: "Politeknik Negeri Banyuwangi",
-    photo: shinta,
+    path: "Fullstack Developer",
+    photo: "/shinta.jpg",
+
+    instagram:"https://instagram.com/shintaylstn_", 
+    email:"https://linkedin.com/in/shinta",
+    linkedin:"mailto:shinta@gmail.com",
   },
   {
     name: "Wanda Safitri",
-    path: "Fullstack Developer",
     kampus: "Politeknik Negeri Banyuwangi",
-    photo: wanda,
+    path: "Fullstack Developer",
+    photo: "/wanda.jpg",
+
+    instagram:"https://instagram.com/wandasvt", 
+    email:"mailto:wandaforone@gmail.com",
+    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
+    
   },
   {
     name: "Nurvi A'Malina",
-    path: "Data Scientist",
     kampus: "Politeknik Negeri Banyuwangi",
-    photo: nurvi,
+    path: "Data Scientist",
+    photo: "/nurvi.jpg",
+
+    instagram:"https://instagram.com/wandasvt", 
+    email:"mailto:wandaforone@gmail.com",
+    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
   },
   {
     name: "Nasywa Salsabiila Romadhona",
-    path: "AI Engineer",
     kampus: "Universitas Darwan Ali",
-    photo: nasywa,
+    path: "AI Engineer",
+    photo: "nasywa.jpg",
+
+    instagram:"https://instagram.com/wandasvt", 
+    email:"mailto:wandaforone@gmail.com",
+    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
   },
   {
     name: "Muhammad Jumail Ilham Sahupula",
-    path: "AI Engineer",
     kampus: "Universitas Darwan Ali",
-    photo: jumail,
+    path: "AI Engineer",
+    photo: "jumail.jpg",
+
+    instagram:"https://instagram.com/wandasvt", 
+    email:"mailto:wandaforone@gmail.com",
+    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
   },
   {
     name: "Bili Ramdani",
-    path: "Data Scientist", 
     kampus: "Institut Teknologi Bandung",
-    photo: bili,
+    path: "Data Scientist",
+    photo: "bili.jpg",
+
+    instagram:"https://instagram.com/wandasvt", 
+    email:"mailto:wandaforone@gmail.com",
+    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
   },
 ];
 
@@ -56,9 +74,9 @@ function About() {
       <div className="about-header">
         <h1>About EcoShortAI</h1>
 
-        {/* ICON DARI ASSETS */}
+        {/* ICON */}
         <img
-          src={ecoEarth}
+          src="/planet-earth.png"
           alt="eco earth"
           className="about-image"
         />
@@ -115,8 +133,23 @@ function About() {
                 {/* CARD */}
                 <div className="team-card">
                   <h3 className="team-name">{member.name}</h3>
-                  <p className="team-path">{member.path}</p>
                   <p className="team-campus">{member.kampus}</p>
+                  <p className="team-path">{member.path}</p>
+
+                  <div className="social-icons">
+                    <a href={member.linkedin} target="_blank" rel="noreferrer">
+                      <img src="/linkedin.png" alt="linkedin" />
+                    </a>
+                    
+                    <a href={member.email}>
+                      <img src="/email.png" alt="email" />
+                    </a>
+
+                    <a href={member.instagram} target="_blank" rel="noreferrer">
+                      <img src="/instagram.png" alt="instagram" />
+                    </a>
+                  </div>
+
                 </div>
 
               </div>
