@@ -136,7 +136,7 @@ function About() {
                   <p className="team-campus">{member.kampus}</p>
                   <p className="team-path">{member.path}</p>
 
-                  <div className="social-icons">
+                  <div className="about-social-icons">
                     <a href={member.linkedin} target="_blank" rel="noreferrer">
                       <img src="/linkedin.png" alt="linkedin" />
                     </a>

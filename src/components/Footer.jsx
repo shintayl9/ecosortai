@@ -27,7 +27,7 @@ function Footer() {
               CC26-PSU026@student.devacademy.id
             </p>
 
-            <div className="social-icons">
+            <div className="footer-social-icons">
               <img src="/icon-instagram.png" alt="Instagram" />
               <img src="/icon-whatsapp.png" alt="WhatsApp" />
               <img src="/icon-youtube.png" alt="YouTube" />
