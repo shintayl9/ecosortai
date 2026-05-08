@@ -1,7 +1,4 @@
-/*
-    styling buat navbar (Navbar.jsx)
-*/
-
+/* styling buat navbar (Navbar.jsx) */
 
 .navbar {
     display: flex;
@@ -11,6 +8,10 @@
     background: #79AE6F;
 }
 
+.logo {
+    text-decoration: none;
+}
+
 /* tulisan ecosortai pojok kiri atas navbar  */
 .navbar h2 {
     margin: 0;
@@ -18,7 +19,7 @@
     font-size: 32px;
 }
 
-/* menu */
+/* menu navbar*/
 .nav-links {
     display: flex;
     gap: 30px;
@@ -32,7 +33,79 @@
     transition: 0.3s;
 }
 
-/* warna ketika akan di klik */
-.nav-links a:hover {
-    color: #000000;
+/* =============== RESPONSIVE ================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: black;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #79AE6F;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar h2 {
+        font-size: 24px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
 }

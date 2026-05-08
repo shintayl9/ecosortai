@@ -65,6 +65,7 @@ button:hover {
 .hero-text {
     flex: 1;
     min-width: 280px;
+    padding-left: 100px;
 }
 
 .hero-text h1 {
@@ -286,6 +287,11 @@ button:hover {
         text-align: center;
     }
 
+    .hero-text {
+        padding-left: 0;
+        text-align: center;
+    }
+
     .hero-text h1 {
         font-size: 42px;
     }
@@ -326,13 +332,17 @@ button:hover {
         font-size: 28px;
     }
 
+    .hero-text {
+        padding-left: 0;
+        text-align: center;
+    }
+
     .hero-text h1 {
         font-size: 36px;
     }
 
     .steps-container {
         flex-direction: column;
-        /* ← ubah dari row ke column */
         align-items: center;
         gap: 40px;
     }
@@ -359,6 +369,11 @@ button:hover {
 @media (max-width: 480px) {
     .hero-section {
         padding: 50px 0;
+    }
+
+    .hero-text {
+        padding-left: 0;
+        text-align: center;
     }
 
     .hero-text h1 {
