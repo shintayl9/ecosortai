@@ -54,9 +54,11 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: 300;
+    transition: 0.3s;
 }
 
 .footer-nav-vertical a:hover {
+    color: #E8F5E6;
     text-decoration: underline;
 }
 

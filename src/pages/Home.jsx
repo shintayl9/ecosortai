@@ -1,5 +1,6 @@
 // halaman utama
 import "../styles/home.css"
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -14,7 +15,9 @@ function Home() {
                             <p>
                                 Platform berbasis AI untuk klasifikasi sampah dan solusi pengelolaannya yang cerdas.
                             </p>
-                            <button className="cta-button">Cek Sampahmu disini!</button>
+                            <Link to="/upload">
+                                <button className="cta-button">Cek Sampahmu disini!</button>
+                            </Link>
                         </div>
                         <div className="hero-image">
                             <img src="/logo-removebg-preview.png" alt="Logo" />
@@ -59,8 +62,9 @@ function Home() {
                 <div className="wrapper">
                     <h2>ECO Knowledge</h2>
                     <p className="subtitle">Ubah Cara Kamu Melihat Sampah Mulai hari ini</p>
-
-                    <button className="try-btn">Try AI</button>
+                    <Link to="/upload" onClick={() => window.scrollTo(0, 0)}>
+                        <button className="try-btn">Try AI</button>
+                    </Link>
 
                     <div className="eco-container">
                         {/* Card Kiri - Besar */}
@@ -68,30 +72,38 @@ function Home() {
                             <h4>Mengapa Sampah Menjadi Masalah Besar di Indonesia?</h4>
                             <img src="/card-left-homepage.png" alt="Sampah Indonesia" />
                             <span className="date">26 April 2026 | 11.28</span>
-                            <button className="read-more">Baca Selengkapnya</button>
+                            <Link to="/article1" onClick={() => window.scrollTo(0, 0)}>
+                                <button className="read-more">Baca Selengkapnya</button>
+                            </Link>
                         </div>
 
                         {/* Card Kanan */}
                         <div className="eco-card-stack">
+                            {/* Card 1 - Jenis Sampah */}
                             <div className="eco-card-small">
                                 <div className="card-content">
                                     <img src="/card-right-1.jpg" alt="Jenis Sampah" />
                                     <div className="card-text">
-                                        <h4>Jenis Sampah</h4>
+                                        <div className="card-header">
+                                            <h4>Jenis Sampah</h4>
+                                            <span className="date">26 April 2026 | 11.28</span>
+                                        </div>
                                         <p>Penjelasan singkat tentang berbagai jenis sampah organik dan anorganik...</p>
-                                        <span className="date">26 April 2026 | 11.28</span>
                                     </div>
                                 </div>
                                 <button className="read-more">Baca Selengkapnya</button>
                             </div>
 
+                            {/* Card 2 - Waktu Terurai */}
                             <div className="eco-card-small">
                                 <div className="card-content">
                                     <img src="/card-right-2.jpg" alt="Waktu Terurai" />
                                     <div className="card-text">
-                                        <h4>Waktu Terurai</h4>
+                                        <div className="card-header">
+                                            <h4>Waktu Terurai</h4>
+                                            <span className="date">26 April 2026 | 11.28</span>
+                                        </div>
                                         <p>Penjelasan singkat lama waktu sampah terurai di lingkungan...</p>
-                                        <span className="date">26 April 2026 | 11.28</span>
                                     </div>
                                 </div>
                                 <button className="read-more">Baca Selengkapnya</button>

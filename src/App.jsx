@@ -7,7 +7,7 @@ import Upload from "./pages/Upload"
 import Loading from "./pages/Loading";
 import Hasil from "./pages/Hasil";
 import History from "./pages/History";
-import Article from "./pages/Article";
+import Article1 from "./pages/Article1";
 import About from "./pages/About";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/loading" element={<Loading />} />
         <Route path="/hasil" element={<Hasil />} />
         <Route path="/history" element={<History />} />
-        <Route path="/article" element={<Article />} />
+        <Route path="/article1" element={<Article1 />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

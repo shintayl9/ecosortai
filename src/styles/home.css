@@ -86,7 +86,7 @@ button:hover {
     padding: 12px 28px;
     background-color: #79AE6F;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -169,11 +169,19 @@ button:hover {
     background: #7ABA6D;
     color: white;
     padding: 12px 32px;
-    border-radius: 30px;
+    border-radius: 10px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 50px;
     box-shadow: 0 2px 10px rgba(122, 186, 109, 0.3);
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.try-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .eco-container {
@@ -185,7 +193,7 @@ button:hover {
 
 /* Card Large (Kiri) */
 .eco-card-large {
-    flex: 1.2;
+    flex: 0.9;
     background: white;
     border-radius: 20px;
     padding: 25px;
@@ -198,13 +206,14 @@ button:hover {
 }
 
 .eco-card-large h4 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
+    color: #2E2E2E;
 }
 
 .eco-card-large img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
     margin: 15px 0;
@@ -219,7 +228,7 @@ button:hover {
 
 /* Card Stack (Kanan) */
 .eco-card-stack {
-    flex: 1;
+    flex: 1.2;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -254,30 +263,49 @@ button:hover {
     flex: 1;
 }
 
-.card-text h4 {
-    font-size: 18px;
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 8px;
+}
+
+.card-header h4 {
+    font-size: 18px;
+    margin: 0;
+    color: #2E2E2E;
+}
+
+.card-header .date {
+    font-size: 11px;
+    color: #999;
+    white-space: nowrap;
 }
 
 .card-text p {
     font-size: 14px;
     color: #666;
     line-height: 1.4;
-    margin-bottom: 8px;
-}
-
-.card-text .date {
-    font-size: 11px;
-    color: #999;
+    margin-bottom: 0;
 }
 
 .read-more {
     background: #7ABA6D;
     color: white;
+    border: none;
     padding: 8px 20px;
-    border-radius: 20px;
+    border-radius: 15px;
     font-size: 13px;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 /* ================== RESPONSIVE ===================== */

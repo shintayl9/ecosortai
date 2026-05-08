@@ -1,4 +1,5 @@
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -17,9 +18,9 @@ function Footer() {
           </p>
 
           <div className="footer-nav-vertical">
-            <a href="#">How it Works</a>
-            <a href="#">Upload</a>
-            <a href="#">About</a>
+            <Link to="/how-it-works" onClick={() => window.scrollTo(0, 0)}>How It Works</Link>
+            <Link to="/upload" onClick={() => window.scrollTo(0, 0)}>Upload</Link>
+            <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
           </div>
 
           <div className="footer-right-col">
