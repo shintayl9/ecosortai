@@ -1,6 +1,5 @@
 import {
   useEffect,
-  useRef,
   useState,
 } from "react";
 
@@ -20,7 +19,8 @@ function History() {
   const [historyData, setHistoryData] =
     useState([]);
 
-  const scrollRef = useRef(null);
+  const [currentPage, setCurrentPage] =
+    useState(0);
 
   const navigate = useNavigate();
 
@@ -35,21 +35,18 @@ function History() {
 
   }, []);
 
-  // SCROLL RIGHT
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({
-      left: 300,
-      behavior: "smooth",
-    });
-  };
+  // ===== PAGINATION =====
 
-  // SCROLL LEFT
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({
-      left: -300,
-      behavior: "smooth",
-    });
-  };
+  const itemsPerPage = 4;
+
+  const startIndex =
+    currentPage * itemsPerPage;
+
+  const currentItems =
+    historyData.slice(
+      startIndex,
+      startIndex + itemsPerPage
+    );
 
   return (
     <div className="history-page">
@@ -70,7 +67,13 @@ function History() {
           {/* LEFT */}
           <button
             className="left-btn"
-            onClick={scrollLeft}
+            onClick={() =>
+              setCurrentPage((prev) =>
+                prev > 0
+                  ? prev - 1
+                  : prev
+              )
+            }
           >
             <ChevronLeft size={20} />
           </button>
@@ -78,90 +81,99 @@ function History() {
           {/* RIGHT */}
           <button
             className="right-btn"
-            onClick={scrollRight}
+            onClick={() =>
+              setCurrentPage((prev) =>
+                (prev + 1) *
+                  itemsPerPage <
+                historyData.length
+                  ? prev + 1
+                  : prev
+              )
+            }
           >
             <ChevronRight size={20} />
           </button>
 
         </div>
 
-        {/* SLIDER */}
-        <div
-          className="history-slider"
-          ref={scrollRef}
-        >
+        {/* GRID */}
+        <div className="history-slider">
 
-          {historyData.length > 0 ? (
-            historyData.map((item, index) => {
+          {currentItems.length > 0 ? (
+            currentItems.map(
+              (item, index) => {
 
-              // SPLIT DATE
-              const splitDate =
-                item.date.split(",");
+                // SPLIT DATE
+                const splitDate =
+                  item.date.split(",");
 
-              return (
+                return (
 
-                <div
-                  className={`history-card ${
-                    index === 0
-                      ? "latest"
-                      : ""
-                  }`}
-                  key={index}
-                  onClick={() =>
-                    navigate("/hasil", {
-                      state: {
-                        hasil:
-                          item.hasil.toLowerCase(),
-                        image:
-                          item.image,
-                      },
-                    })
-                  }
-                >
+                  <div
+                    className={`history-card ${
+                      index === 0 &&
+                      currentPage === 0
+                        ? "latest"
+                        : ""
+                    }`}
+                    key={index}
+                    onClick={() =>
+                      navigate("/hasil", {
+                        state: {
+                          hasil:
+                            item.hasil.toLowerCase(),
+                          image:
+                            item.image,
+                        },
+                      })
+                    }
+                  >
 
-                  {/* NEW BADGE */}
-                  {index === 0 && (
-                    <div className="new-badge">
-                      NEW
+                    {/* NEW BADGE */}
+                    {index === 0 &&
+                      currentPage === 0 && (
+                        <div className="new-badge">
+                          NEW
+                        </div>
+                      )}
+
+                    {/* DATE */}
+                    <div className="date-box">
+
+                      <span>
+                        {splitDate[0]}
+                      </span>
+
+                      <small>
+                        {splitDate[1]}
+                      </small>
+
                     </div>
-                  )}
 
-                  {/* DATE */}
-                  <div className="date-box">
+                    {/* IMAGE */}
+                    <img
+                      src={item.image}
+                      alt="history"
+                    />
 
-                    <span>
-                      {splitDate[0]}
-                    </span>
+                    {/* BOTTOM */}
+                    <div className="history-bottom">
 
-                    <small>
-                      {splitDate[1]}
-                    </small>
+                      <span className="kategori">
+                        {item.hasil}
+                      </span>
 
-                  </div>
+                      <small>
+                        96% Accurate
+                      </small>
 
-                  {/* IMAGE */}
-                  <img
-                    src={item.image}
-                    alt="history"
-                  />
-
-                  {/* BOTTOM */}
-                  <div className="history-bottom">
-
-                    <span className="kategori">
-                      {item.hasil}
-                    </span>
-
-                    <small>
-                      96% Accurate
-                    </small>
+                    </div>
 
                   </div>
 
-                </div>
-
-              );
-            })
+                );
+              }
+            )
           ) : (
             <p className="empty-text">
               Belum ada riwayat 🌱
