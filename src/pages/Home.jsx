@@ -82,16 +82,19 @@ function Home() {
                             {/* Card 1 - Jenis Sampah */}
                             <div className="eco-card-small">
                                 <div className="card-content">
-                                    <img src="/card-right-1.jpg" alt="Jenis Sampah" />
+                                    <img src="/sampah-organik.jpg" alt="Jenis Sampah" />
                                     <div className="card-text">
                                         <div className="card-header">
                                             <h4>Jenis Sampah</h4>
                                             <span className="date">26 April 2026 | 11.28</span>
                                         </div>
-                                        <p>Penjelasan singkat tentang berbagai jenis sampah organik dan anorganik...</p>
+                                        <p>Sampah organik adalah sampah yang berasal dari makhluk hidup
+                                            seperti sisa makanan, daun...</p>
                                     </div>
                                 </div>
-                                <button className="read-more">Baca Selengkapnya</button>
+                                <Link to="/article2" onClick={() => window.scrollTo(0, 0)}>
+                                    <button className="read-more">Baca Selengkapnya</button>
+                                </Link>
                             </div>
 
                             {/* Card 2 - Waktu Terurai */}
