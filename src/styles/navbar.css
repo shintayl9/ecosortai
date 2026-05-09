@@ -33,6 +33,15 @@
     transition: 0.3s;
 }
 
+.nav-links a.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #000000;
+}
+
 /* =============== RESPONSIVE ================= */
 .hamburger {
     display: none;
