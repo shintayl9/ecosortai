@@ -1,28 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/upload.css";
 
 function Upload() {
   const [image, setImage] = useState(null);
-
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
-  // HANDLE UPLOAD
+  // PROSES FILE GAMBAR
+  const processImage = (file) => {
+    if (!file) return; // jika tidak ada file, stop
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImage({
+        file: file,
+        preview: reader.result, // BASE64 string
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  // HANDLE KLIK UPLOAD
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setImage({
-          file: file,
-          preview: reader.result, // BASE64
-        });
-      };
-
-      reader.readAsDataURL(file);
-    }
+    processImage(file); // ← panggil fungsi yang sama
   };
 
   // HAPUS GAMBAR
@@ -30,43 +33,70 @@ function Upload() {
     setImage(null);
   };
 
+  // DRAG & DROP HANDLERS
+  const onDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const onDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const onDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const onDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("image/")) {
+      processImage(file);
+    }
+  };
+
+  // TRIGGER FILE INPUT
+  const onButtonClick = () => {
+    fileInputRef.current.click();
+  };
+
+  // RENDER
   return (
     <div className="upload-page">
-
-      {/* HEADER */}
       <div className="upload-header">
         <h1>EcoSortAI</h1>
       </div>
 
-      {/* CONTENT */}
       <div className="upload-content">
-
         <h2>Halaman Upload</h2>
 
-        {/* BOX */}
-        <div className="upload-box">
-
+        <div
+          className={`upload-box ${isDragging ? "dragging" : ""}`}
+          onDragEnter={onDragEnter}
+          onDragLeave={onDragLeave}
+          onDragOver={onDragOver}
+          onDrop={onDrop}
+        >
           {!image ? (
             <>
-              {/* ICON */}
               <img
                 src="/upload-icon.png"
                 alt="Upload"
                 className="upload-icon"
               />
-
               <p className="upload-text">
-                Drop file here
+                {isDragging ? "Lepaskan untuk upload" : "Drop file here"}
               </p>
-
-              <span className="upload-or">
-                OR
-              </span>
-
-              {/* INPUT */}
+              <span className="upload-or">OR</span>
               <label className="upload-btn">
                 Upload File
-
                 <input
                   type="file"
                   accept="image/*"
@@ -77,39 +107,22 @@ function Upload() {
             </>
           ) : (
             <>
-              {/* PREVIEW WRAPPER */}
               <div className="preview-wrapper">
-
-                {/* BUTTON X */}
-                <button
-                  className="remove-image"
-                  onClick={removeImage}
-                >
+                <button className="remove-image" onClick={removeImage}>
                   ✕
                 </button>
-
-                {/* PREVIEW IMAGE */}
                 <img
                   src={image.preview}
                   alt="Preview"
                   className="preview-image"
                 />
-
               </div>
-
-              {/* FILE NAME */}
-              <p className="file-name">
-                {image.file.name}
-              </p>
-
-              {/* SUBMIT */}
+              <p className="file-name">{image.file.name}</p>
               <button
                 className="submit-btn"
                 onClick={() =>
                   navigate("/loading", {
-                    state: {
-                      image: image.preview,
-                    },
+                    state: { image: image.preview },
                   })
                 }
               >
@@ -117,11 +130,8 @@ function Upload() {
               </button>
             </>
           )}
-
         </div>
-
       </div>
-
     </div>
   );
 }
