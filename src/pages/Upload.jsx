@@ -12,10 +12,16 @@ function Upload() {
     const file = e.target.files[0];
 
     if (file) {
-      setImage({
-        file: file,
-        preview: URL.createObjectURL(file),
-      });
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImage({
+          file: file,
+          preview: reader.result, // BASE64
+        });
+      };
+
+      reader.readAsDataURL(file);
     }
   };
 
@@ -105,7 +111,7 @@ function Upload() {
                       image: image.preview,
                     },
                   })
-                }              
+                }
               >
                 Submit
               </button>
