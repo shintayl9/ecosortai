@@ -23,9 +23,9 @@ function Article1() {
           <div className="article1-row">
             <div className="article1-text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla tincidunt semper urna sit amet ornare.
-                Nam bibendum pharetra mattis. Aenean laoreet eleifend ante quis interdum.
+                Indonesia menghasilkan sekitar 35 juta ton sampah per tahun.
+                Hanya 60% yang terkelola dengan baik, sisanya mencemari lingkungan.
+                Sampah plastik menjadi ancaman terbesar karena sulit terurai.
               </p>
             </div>
             <div className="article1-image">
@@ -36,9 +36,10 @@ function Article1() {
           {/* teks */}
           <div className="article1-text-only">
             <p>
-              Vestibulum vulputate, ipsum ut convallis convallis, nunc arcu vehicula sem,
-              sed cursus purus lorem tincidunt diam. In tincidunt varius mattis.
-              Aenean placerat fringilla mauris in pulvinar.
+              Sampah yang menumpuk di Tempat Pembuangan Akhir (TPA) menghasilkan gas metana
+              yang berkontribusi terhadap pemanasan global. Selain itu, sampah yang tidak
+              dikelola dengan benar dapat mencemari tanah, air, dan udara, serta menjadi
+              sarang penyakit seperti demam berdarah dan diare.
             </p>
           </div>
 
@@ -49,9 +50,10 @@ function Article1() {
             </div>
             <div className="article1-text">
               <p>
-                Sed cursus purus lorem tincidunt diam. In tincidunt varius mattis.
-                Aenean placerat fringilla mauris in pulvinar.
-                Vestibulum vulputate, ipsum ut convallis convallis.
+                Sampah plastik yang dibuang sembarangan sering berakhir di sungai dan laut.
+                Indonesia merupakan negara penyumbang sampah plastik terbesar kedua di dunia.
+                Hal ini mengancam ekosistem laut dan biota di dalamnya, seperti ikan, penyu,
+                dan terumbu karang.
               </p>
             </div>
           </div>

@@ -89,7 +89,7 @@ function Home() {
                                             <span className="date">26 April 2026 | 11.28</span>
                                         </div>
                                         <p>Sampah organik adalah sampah yang berasal dari makhluk hidup
-                                            seperti sisa makanan, daun...</p>
+                                            seperti sisa makanan, daun, dan kayu. Sampah ini mudah...</p>
                                     </div>
                                 </div>
                                 <Link to="/article2" onClick={() => window.scrollTo(0, 0)}>
@@ -100,16 +100,19 @@ function Home() {
                             {/* Card 2 - Waktu Terurai */}
                             <div className="eco-card-small">
                                 <div className="card-content">
-                                    <img src="/card-right-2.jpg" alt="Waktu Terurai" />
+                                    <img src="/biodegradable.jpg" alt="Waktu Terurai" />
                                     <div className="card-text">
                                         <div className="card-header">
                                             <h4>Waktu Terurai</h4>
                                             <span className="date">26 April 2026 | 11.28</span>
                                         </div>
-                                        <p>Penjelasan singkat lama waktu sampah terurai di lingkungan...</p>
+                                        <p>Sampah biodegradable adalah sampah yang dapat terurai secara alami
+                                            oleh mikroorganisme. Contohnya sisa makanan, daun, kayu...</p>
                                     </div>
                                 </div>
-                                <button className="read-more">Baca Selengkapnya</button>
+                                <Link to="/article3" onClick={() => window.scrollTo(0, 0)}>
+                                    <button className="read-more">Baca Selengkapnya</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
