@@ -1,11 +1,12 @@
 import "../styles/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // render tampilan navbar
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActive] = useState("/");
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -15,6 +16,10 @@ function Navbar() {
         setActiveLink(path);
         setIsOpen(false);
     }
+
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
 
     // lock scroll
     useEffect(() => {
@@ -37,11 +42,41 @@ function Navbar() {
 
             {/* Menu Navigasi */}
             <div className={`nav-links ${isOpen ? "active" : ""}`}>
-                <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-                <Link to="/how-it-works" onClick={() => setIsOpen(false)}>How It Works</Link>
-                <Link to="/upload" onClick={() => setIsOpen(false)}>Upload</Link>
-                <Link to="/history" onClick={() => setIsOpen(false)}>History</Link>
-                <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
+                <Link
+                    to="/"
+                    className={isActive("/") ? "active" : ""}
+                    onClick={handleLinkClick}
+                >
+                    Home
+                </Link>
+                <Link
+                    to="/how-it-works"
+                    className={isActive("/how-it-works") ? "active" : ""}
+                    onClick={handleLinkClick}
+                >
+                    How It Works
+                </Link>
+                <Link
+                    to="/upload"
+                    className={isActive("/upload") ? "active" : ""}
+                    onClick={handleLinkClick}
+                >
+                    Upload
+                </Link>
+                <Link
+                    to="/history"
+                    className={isActive("/history") ? "active" : ""}
+                    onClick={handleLinkClick}
+                >
+                    History
+                </Link>
+                <Link
+                    to="/about"
+                    className={isActive("/about") ? "active" : ""}
+                    onClick={handleLinkClick}
+                >
+                    About
+                </Link>
             </div>
 
             {/* Hamburger */}
