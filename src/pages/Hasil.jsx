@@ -30,6 +30,15 @@ function Hasil() {
   const [feedback, setFeedback] =
     useState(null);
 
+  const [feedbackText, setFeedbackText] =
+    useState("");
+
+  const [isSubmitted, setIsSubmitted] =
+    useState(false);
+
+  const [showNotif, setShowNotif] =
+    useState(false);
+
   // DATA HASIL
   const hasilData = {
 
@@ -107,6 +116,70 @@ function Hasil() {
 
   }, []);
 
+  // ===== CHECK FEEDBACK =====
+  useEffect(() => {
+
+    const savedFeedback =
+      JSON.parse(
+        localStorage.getItem("feedbacks")
+      ) || [];
+
+    const alreadyFeedback =
+      savedFeedback.some(
+        (item) =>
+          item.image === imageDariAI
+      );
+
+    if (alreadyFeedback) {
+      setIsSubmitted(true);
+    }
+
+  }, []);
+
+  // ===== SUBMIT FEEDBACK =====
+  const handleSubmitFeedback = () => {
+
+    if (!feedback) {
+      alert("Pilih feedback terlebih dahulu");
+      return;
+    }
+
+    const oldFeedback =
+      JSON.parse(
+        localStorage.getItem("feedbacks")
+      ) || [];
+
+    const newFeedback = {
+      image: imageDariAI,
+      hasil: hasilDariAI,
+      rating: feedback,
+      text: feedbackText,
+      date: new Date().toLocaleString(),
+    };
+
+    const updatedFeedback = [
+      ...oldFeedback,
+      newFeedback,
+    ];
+
+    localStorage.setItem(
+      "feedbacks",
+      JSON.stringify(updatedFeedback)
+    );
+
+    // SUCCESS
+    setShowNotif(true);
+
+    // DISABLE BUTTON
+    setIsSubmitted(true);
+
+    // HIDE NOTIF
+    setTimeout(() => {
+      setShowNotif(false);
+    }, 2500);
+
+  };
+
   return (
     <div className="hasil-container">
 
@@ -159,7 +232,7 @@ function Hasil() {
         {/* UPLOAD ULANG */}
         <button
           className="retry-btn"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/upload")}
         >
           Upload Ulang
         </button>
@@ -292,6 +365,7 @@ function Hasil() {
                 : ""
             }`}
             onClick={() =>
+              !isSubmitted &&
               setFeedback("like")
             }
           >
@@ -313,6 +387,7 @@ function Hasil() {
                 : ""
             }`}
             onClick={() =>
+              !isSubmitted &&
               setFeedback("dislike")
             }
           >
@@ -331,14 +406,32 @@ function Hasil() {
         {/* TEXTAREA */}
         <textarea
           placeholder="Tulis feedback anda disini..."
+          value={feedbackText}
+          onChange={(e) =>
+            setFeedbackText(e.target.value)
+          }
+          disabled={isSubmitted}
         />
 
         {/* BUTTON */}
-        <button className="kirim-btn">
-          Kirim Feedback
+        <button
+          className="kirim-btn"
+          onClick={handleSubmitFeedback}
+          disabled={isSubmitted}
+        >
+          {isSubmitted
+            ? "Feedback Terkirim"
+            : "Kirim Feedback"}
         </button>
 
       </div>
+
+      {/* NOTIFICATION */}
+      {showNotif && (
+        <div className="feedback-notif">
+          Feedback berhasil dikirim 
+        </div>
+      )}
 
     </div>
   );
