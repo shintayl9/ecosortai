@@ -1,6 +1,4 @@
-/* =========================
-   ABOUT PAGE STYLING
-   ========================= */
+/* ================= ABOUT PAGE STYLING =================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -32,6 +30,10 @@
 .about-section {
   margin-bottom: 40px;
   text-align: center;
+}
+
+.about-section p {
+  text-align: justify;
 }
 
 /* TEAM TITLE */
@@ -71,7 +73,7 @@
   border: 6px solid white;
   z-index: 2;
 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* CARD */
@@ -89,7 +91,7 @@
   flex-direction: column;
   justify-content: center;
 
-  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
 
   position: relative;
@@ -156,6 +158,15 @@
   cursor: pointer;
 
   transition: 0.3s ease;
+}
+
+.about-social-icons img[src*="linkedin"] {
+  width: 45px;
+  height: 45px;
+  transform: scale(1.1);
+  transform-origin: center;
+  vertical-align: middle;
+  margin-top: -10px;
 }
 
 .about-social-icons img:hover {

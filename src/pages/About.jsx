@@ -6,7 +6,7 @@ const teamData = [
   {
     name: "Shinta Yulistiana",
     kampus: "Politeknik Negeri Banyuwangi",
-    path: "Fullstack Developer",
+    path: "Full-Stack Web Developer",
     photo: "/shinta.jpg",
 
     instagram:"https://instagram.com/shintaylstn_", 
@@ -16,7 +16,7 @@ const teamData = [
   {
     name: "Wanda Safitri",
     kampus: "Politeknik Negeri Banyuwangi",
-    path: "Fullstack Developer",
+    path: "Full-Stack Web Developer",
     photo: "/wanda.jpg",
 
     instagram:"https://instagram.com/wandasvt", 
