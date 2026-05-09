@@ -89,7 +89,7 @@
   transform: translateY(-8px);
 }
 
-/* ===== LATEST ===== */
+/* ===== NEWEST CARD ===== */
 
 .latest {
   border: 2px solid #8bc98b;
@@ -99,17 +99,67 @@
     #eefbee,
     #ffffff
   );
+
+  box-shadow:
+    0 6px 18px rgba(76,175,80,0.15);
 }
 
-/* ===== NEW BADGE ===== */
+/* ===== LAST READ CARD ===== */
 
-.new-badge {
+.read-card {
+  border: 2px solid #90caf9;
+
+  background: linear-gradient(
+    to bottom,
+    #f3f9ff,
+    #ffffff
+  );
+
+  box-shadow:
+    0 6px 18px rgba(144,202,249,0.18);
+}
+
+/* ===== NEW + LAST READ ===== */
+
+.mix-card {
+  border: 2px solid transparent;
+
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(
+      135deg,
+      #8bc98b,
+      #90caf9
+    ) border-box;
+
+  box-shadow:
+    0 8px 22px rgba(127,183,126,0.15),
+    0 8px 22px rgba(144,202,249,0.15);
+}
+
+/* ===== OLD CARD ===== */
+
+.old-card {
+  opacity: 0.9;
+
+  background: #fafafa;
+
+  filter: grayscale(8%);
+}
+
+.old-card:hover {
+  opacity: 1;
+
+  filter: grayscale(0%);
+}
+
+/* ===== BADGES ===== */
+
+.new-badge,
+.read-badge {
   position: absolute;
 
-  top: 14px;
   right: 14px;
-
-  background: #4caf50;
 
   color: white;
 
@@ -119,6 +169,22 @@
   padding: 5px 10px;
 
   border-radius: 999px;
+}
+
+/* ===== NEW ===== */
+
+.new-badge {
+  top: 14px;
+
+  background: #4caf50;
+}
+
+/* ===== LAST READ ===== */
+
+.read-badge {
+  top: 46px;
+
+  background: #42a5f5;
 }
 
 /* ===== DATE BOX ===== */
@@ -188,21 +254,45 @@
 /* ===== CATEGORY ===== */
 
 .kategori {
-  font-size: 17px;
+  display: flex;
 
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
   font-weight: 600;
+
+  width: fit-content;
+
+  background: rgba(127,183,126,0.12);
 
   color: #2e7d32;
 
-  text-transform: capitalize;
+  border:
+    1px solid rgba(127,183,126,0.18);
+
+  backdrop-filter: blur(6px);
 }
 
-.history-bottom small {
-  color: #888;
+/* TITIK WARNA */
 
-  font-size: 12px;
+.kategori::before {
+  content: "";
 
-  margin-top: 3px;
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  box-shadow:
+    0 0 10px currentColor;
 }
 
 /* ===== BUTTONS ===== */

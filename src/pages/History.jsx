@@ -22,6 +22,9 @@ function History() {
   const [currentPage, setCurrentPage] =
     useState(0);
 
+  const [lastRead, setLastRead] =
+    useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +34,12 @@ function History() {
         localStorage.getItem("history")
       ) || [];
 
+    const savedLastRead =
+      localStorage.getItem("lastRead");
+
     setHistoryData(savedHistory);
+
+    setLastRead(savedLastRead || "");
 
   }, []);
 
@@ -48,6 +56,28 @@ function History() {
       startIndex + itemsPerPage
     );
 
+  // ===== OPEN HISTORY =====
+
+  const handleOpenHistory = (item) => {
+
+    localStorage.setItem(
+      "lastRead",
+      item.date
+    );
+
+    setLastRead(item.date);
+
+    navigate("/hasil", {
+      state: {
+        hasil:
+          item.hasil.toLowerCase(),
+        image:
+          item.image,
+      },
+    });
+
+  };
+
   return (
     <div className="history-page">
 
@@ -58,10 +88,10 @@ function History() {
         oleh EcoSortAI
       </p>
 
-      {/* WRAPPER */}
+      {/* ===== WRAPPER ===== */}
       <div className="history-wrapper">
 
-        {/* BUTTONS */}
+        {/* ===== BUTTONS ===== */}
         <div className="slider-buttons">
 
           {/* LEFT */}
@@ -96,7 +126,7 @@ function History() {
 
         </div>
 
-        {/* GRID */}
+        {/* ===== GRID ===== */}
         <div className="history-slider">
 
           {currentItems.length > 0 ? (
@@ -107,37 +137,78 @@ function History() {
                 const splitDate =
                   item.date.split(",");
 
+                // NEWEST
+                const isNewest =
+                  historyData[0]?.date ===
+                  item.date;
+
+                // LAST READ
+                const isLastRead =
+                  lastRead === item.date;
+
+                // NEW + READ
+                const isNewestAndRead =
+                  isNewest &&
+                  isLastRead;
+
+                // OLD
+                const isOld =
+                  !isNewest &&
+                  !isLastRead;
+
                 return (
 
                   <div
-                    className={`history-card ${
-                      index === 0 &&
-                      currentPage === 0
-                        ? "latest"
-                        : ""
-                    }`}
+                    className={`history-card
+
+                      ${
+                        isNewestAndRead
+                          ? "mix-card"
+                          : ""
+                      }
+
+                      ${
+                        isNewest &&
+                        !isNewestAndRead
+                          ? "latest"
+                          : ""
+                      }
+
+                      ${
+                        isLastRead &&
+                        !isNewestAndRead
+                          ? "read-card"
+                          : ""
+                      }
+
+                      ${
+                        isOld
+                          ? "old-card"
+                          : ""
+                      }
+                    `}
                     key={index}
                     onClick={() =>
-                      navigate("/hasil", {
-                        state: {
-                          hasil:
-                            item.hasil.toLowerCase(),
-                          image:
-                            item.image,
-                        },
-                      })
+                      handleOpenHistory(item)
                     }
                   >
 
-                    {/* NEW BADGE */}
-                    {index === 0 &&
-                      currentPage === 0 && (
-                        <div className="new-badge">
-                          NEW
-                        </div>
-                      )}
+                    {/* ===== BADGES ===== */}
 
-                    {/* DATE */}
+                    {isNewest && (
+                      <div className="new-badge">
+                        NEW
+                      </div>
+                    )}
+
+                    {isLastRead && (
+                      <div className="read-badge">
+                        LAST READ
+                      </div>
+                    )}
+
+                    {/* ===== DATE ===== */}
+
                     <div className="date-box">
 
                       <span>
@@ -150,13 +221,15 @@ function History() {
 
                     </div>
 
-                    {/* IMAGE */}
+                    {/* ===== IMAGE ===== */}
+
                     <img
                       src={item.image}
                       alt="history"
                     />
 
-                    {/* BOTTOM */}
+                    {/* ===== BOTTOM ===== */}
+
                     <div className="history-bottom">
 
                       <span className="kategori">
