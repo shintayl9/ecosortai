@@ -20,6 +20,12 @@ function HowItWorks() {
                 </div>
             </section>
 
+            <div className="steps-title-wrapper">
+                <div className="wrapper">
+                    <h2 className="steps-title">Cara Kerja EcoSortAI</h2>
+                </div>
+            </div>
+
             {/* Main Content */}
             <section className="steps-detail">
                 <div className="wrapper">

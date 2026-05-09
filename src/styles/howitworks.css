@@ -2,8 +2,8 @@
 
 /* ================= Hero =================== */
 .howitworks-hero-section {
-    background: linear-gradient(to bottom, #79AE6F 0%, #FFFFFF 100%);
-    padding: 80px 0;
+    background: linear-gradient(to bottom, #79AE6F, #FFFFFF);
+    padding: 40px 0 80px;
     display: flex;
     align-items: center;
 }
@@ -19,17 +19,14 @@
 .howitworks-hero-text {
     flex: 1;
     min-width: 280px;
+    padding-left: 100px;
 }
 
 .howitworks-hero-text h1 {
     font-size: 52px;
     font-weight: 700;
-    color: #2E2E2E;
+    color: #354540;
     margin-bottom: 20px;
-    background: #354540;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .howitworks-hero-text p {
@@ -43,7 +40,7 @@
     padding: 12px 28px;
     background-color: #79AE6F;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -98,6 +95,19 @@
     flex: 1;
 }
 
+.steps-title-wrapper {
+    padding: 20px 0 0 0;
+    background: white;
+}
+
+.steps-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #2E2E2E;
+    margin: 0;
+}
+
 .step-content h2 {
     font-size: 32px;
     font-weight: 600;
@@ -128,46 +138,57 @@
     order: 1;
 }
 
-/* =========== RESPONSIVE =========== */
-@media (max-width: 992px) {
-    .howitworks-hero-text h1 {
-        font-size: 44px;
+/* =================== RESPONSIVE ================== */
+@media (max-width: 968px) {
+    .howitworks-hero-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .howitworks-hero-text p {
-        font-size: 16px;
+    .howitworks-hero-text {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .howitworks-hero-text h1 {
+        font-size: 42px;
     }
 
     .howitworks-hero-image img {
-        width: 280px;
+        width: 350px;
     }
 }
 
 @media (max-width: 768px) {
     .howitworks-hero-section {
-        padding: 60px 0;
+        padding: 40px 0 80px;
     }
 
     .howitworks-hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
     }
 
     .howitworks-hero-text {
+        padding-left: 0;
         text-align: center;
     }
 
     .howitworks-hero-text h1 {
-        font-size: 38px;
-    }
-
-    .howitworks-hero-text p {
-        font-size: 16px;
+        font-size: 36px;
     }
 
     .howitworks-hero-image img {
-        width: 250px;
+        width: 320px;
+    }
+
+    .steps-title-wrapper {
+        padding: 15px 0 0 0;
+    }
+
+    .steps-title {
+        font-size: 32px;
+        font-weight: 800;
     }
 
     .step-item {
@@ -209,17 +230,21 @@
         font-size: 32px;
     }
 
-    .howitworks-hero-text p {
-        font-size: 14px;
-    }
-
     .howitworks-cta-button {
         padding: 10px 22px;
         font-size: 14px;
     }
 
     .howitworks-hero-image img {
-        width: 200px;
+        width: 220px;
+    }
+
+    .steps-title-wrapper {
+        padding: 30px 0 0 0;
+    }
+
+    .steps-title {
+        font-size: 24px;
     }
 
     .step-content h2 {
