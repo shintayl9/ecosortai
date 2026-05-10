@@ -12,6 +12,9 @@ import "../styles/History.css";
 import {
   ChevronLeft,
   ChevronRight,
+  Trash2,
+  Check,
+  X,
 } from "lucide-react";
 
 function History() {
@@ -24,6 +27,17 @@ function History() {
 
   const [lastRead, setLastRead] =
     useState("");
+
+  const [selectMode, setSelectMode] =
+    useState(false);
+
+  const [selectedItems, setSelectedItems] =
+    useState([]);
+
+  // ===== MODAL =====
+
+  const [showDeleteModal, setShowDeleteModal] =
+    useState(false);
 
   const navigate = useNavigate();
 
@@ -60,6 +74,14 @@ function History() {
 
   const handleOpenHistory = (item) => {
 
+    if (selectMode) {
+
+      toggleSelect(item.date);
+
+      return;
+
+    }
+
     localStorage.setItem(
       "lastRead",
       item.date
@@ -78,23 +100,186 @@ function History() {
 
   };
 
+  // ===== TOGGLE SELECT =====
+
+  const toggleSelect = (date) => {
+
+    if (
+      selectedItems.includes(date)
+    ) {
+
+      setSelectedItems(
+        selectedItems.filter(
+          (item) => item !== date
+        )
+      );
+
+    } else {
+
+      setSelectedItems([
+        ...selectedItems,
+        date,
+      ]);
+
+    }
+
+  };
+
+  // ===== DELETE SELECTED =====
+
+  const deleteSelected = () => {
+
+    const updatedHistory =
+      historyData.filter(
+        (item) =>
+          !selectedItems.includes(
+            item.date
+          )
+      );
+
+    setHistoryData(updatedHistory);
+
+    localStorage.setItem(
+      "history",
+      JSON.stringify(updatedHistory)
+    );
+
+    setSelectedItems([]);
+
+    setSelectMode(false);
+
+  };
+
+  // ===== DELETE ONE =====
+
+  const deleteOne = (
+    e,
+    date
+  ) => {
+
+    e.stopPropagation();
+
+    const updatedHistory =
+      historyData.filter(
+        (item) =>
+          item.date !== date
+      );
+
+    setHistoryData(updatedHistory);
+
+    localStorage.setItem(
+      "history",
+      JSON.stringify(updatedHistory)
+    );
+
+  };
+
+  // ===== DELETE ALL =====
+
+  const clearAllHistory = () => {
+
+    setShowDeleteModal(true);
+
+  };
+
+  // ===== CONFIRM DELETE =====
+
+  const confirmDeleteAll = () => {
+
+    localStorage.removeItem("history");
+
+    setHistoryData([]);
+
+    setShowDeleteModal(false);
+
+  };
+
   return (
     <div className="history-page">
 
-      <h1>History</h1>
+      {/* ===== HEADER ===== */}
 
-      <p className="history-subtitle">
-        Semua gambar yang pernah dicek
-        oleh EcoSortAI
-      </p>
+      <div className="history-top">
+
+        <div>
+
+          <h1>History</h1>
+
+          <p className="history-subtitle">
+            Semua gambar yang pernah dicek
+            oleh EcoSortAI
+          </p>
+
+        </div>
+
+        {/* ===== ACTION ===== */}
+
+        <div className="history-actions">
+
+          {!selectMode ? (
+            <>
+
+              <button
+                className="action-btn"
+                onClick={() =>
+                  setSelectMode(true)
+                }
+              >
+                Pilih
+              </button>
+
+              <button
+                className="delete-all-btn"
+                onClick={clearAllHistory}
+              >
+                Hapus Semua
+              </button>
+
+            </>
+          ) : (
+            <>
+
+              <button
+                className="delete-selected-btn"
+                onClick={deleteSelected}
+              >
+                <Check size={16} />
+
+                Hapus Terpilih
+              </button>
+
+              <button
+                className="cancel-btn"
+                onClick={() => {
+
+                  setSelectMode(false);
+
+                  setSelectedItems([]);
+
+                }}
+              >
+                <X size={16} />
+
+                Batal
+              </button>
+
+            </>
+          )}
+
+        </div>
+
+      </div>
 
       {/* ===== WRAPPER ===== */}
+
       <div className="history-wrapper">
 
         {/* ===== BUTTONS ===== */}
+
         <div className="slider-buttons">
 
           {/* LEFT */}
+
           <button
             className="left-btn"
             onClick={() =>
@@ -109,6 +294,7 @@ function History() {
           </button>
 
           {/* RIGHT */}
+
           <button
             className="right-btn"
             onClick={() =>
@@ -127,31 +313,27 @@ function History() {
         </div>
 
         {/* ===== GRID ===== */}
+
         <div className="history-slider">
 
           {currentItems.length > 0 ? (
             currentItems.map(
               (item, index) => {
 
-                // SPLIT DATE
                 const splitDate =
                   item.date.split(",");
 
-                // NEWEST
                 const isNewest =
                   historyData[0]?.date ===
                   item.date;
 
-                // LAST READ
                 const isLastRead =
                   lastRead === item.date;
 
-                // NEW + READ
                 const isNewestAndRead =
                   isNewest &&
                   isLastRead;
 
-                // OLD
                 const isOld =
                   !isNewest &&
                   !isLastRead;
@@ -186,6 +368,14 @@ function History() {
                           ? "old-card"
                           : ""
                       }
+
+                      ${
+                        selectedItems.includes(
+                          item.date
+                        )
+                          ? "selected-card"
+                          : ""
+                      }
                     `}
                     key={index}
                     onClick={() =>
@@ -205,6 +395,38 @@ function History() {
                       <div className="read-badge">
                         LAST READ
                       </div>
+                    )}
+
+                    {/* ===== CHECKBOX ===== */}
+
+                    {selectMode && (
+
+                      <div className="checkbox">
+
+                        {selectedItems.includes(
+                          item.date
+                        ) && "✓"}
+
+                      </div>
+
+                    )}
+
+                    {/* ===== DELETE ONE ===== */}
+
+                    {!selectMode && (
+
+                      <button
+                        className="trash-btn"
+                        onClick={(e) =>
+                          deleteOne(
+                            e,
+                            item.date
+                          )
+                        }
+                      >
+                        <Trash2 size={16} />
+                      </button>
+
                     )}
 
                     {/* ===== DATE ===== */}
@@ -256,6 +478,49 @@ function History() {
         </div>
 
       </div>
+
+      {/* ===== DELETE MODAL ===== */}
+
+      {showDeleteModal && (
+
+        <div className="modal-overlay">
+
+          <div className="delete-modal">
+
+            <h3>
+              Anda yakin akan menghapusnya?
+            </h3>
+
+            <p>
+              Semua riwayat klasifikasi berdasarkan gambar yang dicek oleh EcoShortAI akan
+              dihapus permanen.
+            </p>
+
+            <div className="modal-buttons">
+
+              <button
+                className="cancel-modal-btn"
+                onClick={() =>
+                  setShowDeleteModal(false)
+                }
+              >
+                Batal
+              </button>
+
+              <button
+                className="confirm-modal-btn"
+                onClick={confirmDeleteAll}
+              >
+                Hapus
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
 
     </div>
   );
