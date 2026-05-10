@@ -11,12 +11,16 @@ import Article1 from "./pages/Article1";
 import Article2 from "./pages/Article2";
 import Article3 from "./pages/Article3";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/" element={<Home />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/upload" element={<Upload />} />

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background: linear-gradient(
+    to bottom,
+    #79AE6F,
+    #eef8ee
+  );
+
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== CARD ===== */
+
+.login-card {
+  width: 100%;
+
+  max-width: 430px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 40px 35px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== HEADER ===== */
+
+.login-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.login-header h1 {
+  font-size: 38px;
+
+  color: #2f3e36;
+
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #777;
+
+  font-size: 14px;
+}
+
+/* ===== INPUT ===== */
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+
+  padding: 15px 18px;
+
+  border-radius: 16px;
+
+  border: 1px solid #dcdcdc;
+
+  outline: none;
+
+  font-size: 14px;
+
+  font-family: 'Poppins', sans-serif;
+
+  transition: 0.3s ease;
+
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #79AE6F;
+
+  box-shadow:
+    0 0 0 4px rgba(121,174,111,0.15);
+}
+
+/* ===== BUTTON ===== */
+
+.login-btn {
+  width: 100%;
+
+  border: none;
+
+  padding: 15px;
+
+  border-radius: 16px;
+
+  background: #79AE6F;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  font-family: 'Poppins', sans-serif;
+
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background: #699b60;
+
+  transform: translateY(-2px);
+}
+
+/* ===== DEMO ===== */
+
+.demo-text {
+  margin-top: 24px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  color: #888;
+
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+  .login-card {
+    padding: 35px 25px;
+  }
+
+  .login-header h1 {
+    font-size: 32px;
+  }
+}
