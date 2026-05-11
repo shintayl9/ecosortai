@@ -1,0 +1,132 @@
+/* =============== Register User Styles ================ */
+
+/* ======= container utama ======= */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #79AE6F 0%, #FFFFFF 100%);
+    padding: 20px;
+}
+
+/* ======= card register ======= */
+.register-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ======= judul halaman register ======== */
+.register-card h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2E5A24;
+    font-size: 28px;
+}
+
+/* ======= input field (nama, email & password) ======= */
+.register-card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* ======= efek fokus saat input field ======= */
+.register-card input:focus {
+    outline: none;
+    border-color: #79AE6F;
+}
+
+/* ======= tombol daftar ======= */
+.register-card button {
+    width: 100%;
+    padding: 12px;
+    background: #79AE6F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-card button:hover {
+    background: #5A8E4F;
+}
+
+.register-card p {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.register-card a {
+    color: #79AE6F;
+    text-decoration: none;
+}
+
+.register-card a:hover {
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .register-card {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .register-card h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .register-card input {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .register-card button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        padding: 15px;
+    }
+
+    .register-card {
+        padding: 25px;
+    }
+
+    .register-card h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .register-card input {
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+
+    .register-card button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .register-card p {
+        font-size: 13px;
+    }
+}

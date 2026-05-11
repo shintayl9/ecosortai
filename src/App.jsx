@@ -13,6 +13,8 @@ import Article3 from "./pages/Article3";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
+import RegisterUser from "./pages/RegisterUser";
+import LoginUser from "./pages/LoginUser";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/register-user" element={<RegisterUser />} />
+        <Route path="/login-user" element={<LoginUser />} />
         <Route path="/" element={<Home />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/upload" element={<Upload />} />

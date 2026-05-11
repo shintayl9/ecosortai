@@ -1,0 +1,132 @@
+/* =============== Login User Styles ================ */
+
+/* ======= container utama ======= */
+.loginuser-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #79AE6F 0%, #FFFFFF 100%);
+    padding: 20px;
+}
+
+/* ======= card login ======= */
+.loginuser-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ======= judul halaman login ======== */
+.loginuser-card h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2E5A24;
+    font-size: 28px;
+}
+
+/* ======= input field (email & password) ======= */
+.loginuser-card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* ======= efek fokus saat input field ======= */
+.loginuser-card input:focus {
+    outline: none;
+    border-color: #79AE6F;
+}
+
+/* ======= tombol login ======= */
+.loginuser-card button {
+    width: 100%;
+    padding: 12px;
+    background: #79AE6F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.loginuser-card button:hover {
+    background: #5A8E4F;
+}
+
+.loginuser-card p {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.loginuser-card a {
+    color: #79AE6F;
+    text-decoration: none;
+}
+
+.loginuser-card a:hover {
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .loginuser-card {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .loginuser-card h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .loginuser-card input {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .loginuser-card button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginuser-container {
+        padding: 15px;
+    }
+
+    .loginuser-card {
+        padding: 25px;
+    }
+
+    .loginuser-card h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .loginuser-card input {
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+
+    .loginuser-card button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .loginuser-card p {
+        font-size: 13px;
+    }
+}
