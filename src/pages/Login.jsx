@@ -60,8 +60,6 @@ function Login() {
 
           <h1>EcoSortAI</h1>
 
-          <h2>Admin Dashboard</h2>
-
           <p>
             Kelola hasil klasifikasi
             sampah berbasis AI dengan
