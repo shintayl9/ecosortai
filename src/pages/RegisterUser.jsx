@@ -170,7 +170,7 @@ function RegisterUser() {
 
     setTimeout(() => {
 
-      navigate("/");
+      navigate("/login-user");
 
       window.scrollTo(0, 0);
 
