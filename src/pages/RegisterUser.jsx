@@ -8,7 +8,6 @@ import {
 import {
   CheckCircle,
   AlertCircle,
-  X,
 } from "lucide-react";
 
 import "../styles/registeruser.css";
@@ -225,8 +224,6 @@ function RegisterUser() {
               })
             }
           >
-
-            <X size={18} />
 
           </button>
 

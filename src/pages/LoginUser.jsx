@@ -8,7 +8,6 @@ import {
 import {
   CheckCircle,
   AlertCircle,
-  X,
 } from "lucide-react";
 
 import "../styles/loginuser.css";
@@ -117,7 +116,7 @@ function LoginUser() {
 
     showNotif(
       "success",
-      `Selamat datang ${foundUser.name}`
+      `Selamat Datang ${foundUser.name}`
     );
 
     // RESET
@@ -186,8 +185,6 @@ function LoginUser() {
               })
             }
           >
-
-            <X size={18} />
 
           </button>
 
