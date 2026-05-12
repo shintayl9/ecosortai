@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useState,
 } from "react";
 
 import {
@@ -13,7 +14,28 @@ function SplashScreen() {
   const navigate =
     useNavigate();
 
+  const [showButton, setShowButton] =
+    useState(false);
+
+  // ===== SHOW BUTTON =====
+
   useEffect(() => {
+
+    const timer =
+      setTimeout(() => {
+
+        setShowButton(true);
+
+      }, 3000);
+
+    return () =>
+      clearTimeout(timer);
+
+  }, []);
+
+  // ===== HANDLE START =====
+
+  const handleStart = () => {
 
     const currentUser =
       JSON.parse(
@@ -22,27 +44,22 @@ function SplashScreen() {
         )
       );
 
-    setTimeout(() => {
+    // ===== SUDAH LOGIN =====
 
-      // ===== SUDAH LOGIN =====
+    if (currentUser) {
 
-      if (currentUser) {
+      navigate("/home");
 
-        navigate("/home");
+    }
 
-      }
+    // ===== BELUM LOGIN =====
 
-      // ===== BELUM LOGIN =====
+    else {
 
-      else {
+      navigate("/login-user");
 
-        navigate("/login-user");
-
-      }
-
-    }, 2500);
-
-  }, [navigate]);
+    }
+  };
 
   return (
 
@@ -58,7 +75,7 @@ function SplashScreen() {
 
       <div className="splash-content">
 
-        {/* LOGO */}
+        {/* ===== LOGO ===== */}
 
         <img
           src="/logo-removebg-preview.png"
@@ -66,23 +83,47 @@ function SplashScreen() {
           className="splash-logo"
         />
 
-        {/* TITLE */}
+        {/* ===== DESCRIPTION ===== */}
 
-        <h1>
-          EcoSortAI
+        <h1 className="splash-title">
+
+          Platform berbasis AI untuk
+          klasifikasi sampah dan solusi
+          pengelolaannya secara cerdas
+          dan ramah lingkungan.
+
         </h1>
 
-        <p>
-          Smart Waste Detection
+        {/* ===== SUBTEXT ===== */}
+
+        <p className="splash-subtitle">
+
+          Mulai langkah kecilmu untuk
+          bumi yang lebih bersih bersama
+          EcoSortAI 
+
         </p>
 
-        {/* LOADING */}
+        {/* ===== LOADING ===== */}
 
-        <div className="loading-bar">
+        {!showButton ? (
 
-          <div className="loading-fill"></div>
+          <div className="loading-bar">
 
-        </div>
+            <div className="loading-fill"></div>
+
+          </div>
+
+        ) : (
+
+          <button
+            className="start-btn"
+            onClick={handleStart}
+          >
+            Buat Akun & Mulai
+          </button>
+
+        )}
 
       </div>
 
