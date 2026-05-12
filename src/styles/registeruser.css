@@ -1,129 +1,383 @@
-/* =============== Register User Styles ================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* ======= container utama ======= */
+/* =============== PAGE =============== */
+
 .register-container {
     min-height: 100vh;
+
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #79AE6F 0%, #FFFFFF 100%);
-    padding: 20px;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #79AE6F 0%,
+            #dcefd7 45%,
+            #ffffff 100%
+        );
+
+    font-family: 'Poppins', sans-serif;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-/* ======= card register ======= */
+/* ===== BACKGROUND BLUR ===== */
+
+.register-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background: rgba(255,255,255,0.18);
+
+    border-radius: 50%;
+
+    top: -120px;
+    left: -100px;
+
+    filter: blur(40px);
+}
+
+.register-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    background: rgba(121,174,111,0.15);
+
+    border-radius: 50%;
+
+    bottom: -100px;
+    right: -80px;
+
+    filter: blur(40px);
+}
+
+/* =============== CARD =============== */
+
 .register-card {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    z-index: 2;
+
     width: 100%;
-    max-width: 420px;
+    max-width: 430px;
+
+    padding: 42px 36px;
+
+    background: rgba(255,255,255,0.9);
+
+    backdrop-filter: blur(14px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.08);
+
+    border:
+        1px solid rgba(255,255,255,0.4);
+
+    transition: 0.3s ease;
 }
 
-/* ======= judul halaman register ======== */
+.register-card:hover {
+    transform: translateY(-3px);
+}
+
+/* =============== TITLE =============== */
+
 .register-card h1 {
     text-align: center;
-    margin-bottom: 30px;
+
+    font-size: 34px;
+    font-weight: 700;
+
     color: #2E5A24;
-    font-size: 28px;
+
+    margin-bottom: 35px;
 }
 
-/* ======= input field (nama, email & password) ======= */
+/* =============== FORM =============== */
+
+.register-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============== INPUT =============== */
+
 .register-card input {
     width: 100%;
-    padding: 12px 16px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 16px;
+
+    padding: 15px 18px;
+
+    margin-bottom: 18px;
+
+    border:
+        1.5px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    font-size: 15px;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #2f2f2f;
+
+    transition: 0.3s ease;
+
     box-sizing: border-box;
 }
 
-/* ======= efek fokus saat input field ======= */
-.register-card input:focus {
-    outline: none;
-    border-color: #79AE6F;
+.register-card input::placeholder {
+    color: #9ca3af;
 }
 
-/* ======= tombol daftar ======= */
+.register-card input:focus {
+    outline: none;
+
+    border-color: #79AE6F;
+
+    box-shadow:
+        0 0 0 4px rgba(121,174,111,0.12);
+
+    transform: translateY(-1px);
+}
+
+/* =============== BUTTON =============== */
+
 .register-card button {
     width: 100%;
-    padding: 12px;
-    background: #79AE6F;
-    color: white;
+
+    margin-top: 8px;
+
+    padding: 15px;
+
     border: none;
-    border-radius: 10px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #79AE6F,
+            #5f915e
+        );
+
+    color: white;
+
     font-size: 16px;
     font-weight: 600;
+
+    font-family: 'Poppins', sans-serif;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(121,174,111,0.25);
 }
 
 .register-card button:hover {
-    background: #5A8E4F;
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(121,174,111,0.3);
 }
+
+/* =============== LOGIN TEXT =============== */
 
 .register-card p {
     text-align: center;
-    margin-top: 20px;
+
+    margin-top: 24px;
+
     color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
 }
 
 .register-card a {
-    color: #79AE6F;
+    color: #5f915e;
+
+    font-weight: 600;
+
+    margin-left: 5px;
+
     text-decoration: none;
+
+    transition: 0.3s ease;
 }
 
 .register-card a:hover {
-    text-decoration: underline;
+    color: #2E5A24;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =============== CUSTOM NOTIF =============== */
+
+.custom-notif {
+    position: fixed;
+
+    top: 30px;
+    right: 30px;
+
+    min-width: 320px;
+
+    padding: 16px 18px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    animation:
+        notifSlide 0.4s ease;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.12);
+}
+
+.custom-notif.success {
+    background:
+        linear-gradient(
+            135deg,
+            #7fb77e,
+            #5f915e
+        );
+
+    color: white;
+}
+
+.custom-notif.error {
+    background:
+        linear-gradient(
+            135deg,
+            #ef5350,
+            #d32f2f
+        );
+
+    color: white;
+}
+
+.notif-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.close-notif {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+/* =============== ANIMATION =============== */
+
+@keyframes notifSlide {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-20px)
+            translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            translateX(0);
+    }
+}
+
+/* =============== RESPONSIVE =============== */
+
 @media (max-width: 768px) {
+
     .register-card {
-        padding: 30px;
-        max-width: 90%;
+        padding: 35px 24px;
+
+        border-radius: 24px;
     }
 
     .register-card h1 {
-        font-size: 24px;
-        margin-bottom: 25px;
+        font-size: 28px;
+
+        margin-bottom: 28px;
     }
 
     .register-card input {
-        padding: 10px 14px;
+        padding: 14px 16px;
+
         font-size: 14px;
     }
 
     .register-card button {
-        padding: 10px;
-        font-size: 14px;
+        padding: 14px;
+
+        font-size: 15px;
+    }
+
+    .custom-notif {
+        left: 15px;
+        right: 15px;
+
+        min-width: unset;
     }
 }
 
 @media (max-width: 480px) {
+
     .register-container {
-        padding: 15px;
+        padding: 20px 15px;
     }
 
     .register-card {
-        padding: 25px;
+        padding: 30px 20px;
     }
 
     .register-card h1 {
-        font-size: 22px;
-        margin-bottom: 20px;
-    }
-
-    .register-card input {
-        padding: 10px 12px;
-        margin-bottom: 15px;
-        font-size: 13px;
-    }
-
-    .register-card button {
-        padding: 10px;
-        font-size: 14px;
+        font-size: 25px;
     }
 
     .register-card p {

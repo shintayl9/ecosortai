@@ -7,11 +7,11 @@ const teamData = [
     name: "Shinta Yulistiana",
     kampus: "Politeknik Negeri Banyuwangi",
     path: "Full-Stack Web Developer",
-    photo: "/shinta.jpg",
+    photo: "/shinta.jpeg",
 
     instagram:"https://instagram.com/shintaylstn_", 
-    email:"https://linkedin.com/in/shinta",
-    linkedin:"mailto:shinta@gmail.com",
+    email:"mailto:shintayulistiana2004@gmail.com",
+    linkedin:"https://www.linkedin.com/in/shinta-yulistiana-a0b819326/",
   },
   {
     name: "Wanda Safitri",
@@ -28,21 +28,21 @@ const teamData = [
     name: "Nurvi A'Malina",
     kampus: "Politeknik Negeri Banyuwangi",
     path: "Data Scientist",
-    photo: "/nurvi.jpg",
+    photo: "/nurvi.jpeg",
 
-    instagram:"https://instagram.com/wandasvt", 
-    email:"mailto:wandaforone@gmail.com",
-    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
+    instagram:"https://instagram.com/nurviamalina", 
+    email:"mailto:nurviamalina@gmail.com",
+    linkedin:"https://www.linkedin.com/in/nurviamalina/",
   },
   {
     name: "Nasywa Salsabiila Romadhona",
     kampus: "Universitas Darwan Ali",
     path: "AI Engineer",
-    photo: "nasywa.jpg",
+    photo: "nasywa.jpeg",
 
-    instagram:"https://instagram.com/wandasvt", 
-    email:"mailto:wandaforone@gmail.com",
-    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
+    instagram:"https://instagram.com/mzhb.hi", 
+    email:"mailto:nnaassyywwaa16@gmail.com",
+    linkedin:"https://www.linkedin.com/in/nasywasr/",
   },
   {
     name: "Muhammad Jumail Ilham Sahupula",
@@ -58,11 +58,11 @@ const teamData = [
     name: "Bili Ramdani",
     kampus: "Institut Teknologi Bandung",
     path: "Data Scientist",
-    photo: "bili.jpg",
+    photo: "bili.jpeg",
 
-    instagram:"https://instagram.com/wandasvt", 
-    email:"mailto:wandaforone@gmail.com",
-    linkedin:"https://www.linkedin.com/in/wanda-safitri-01295b3a2/",
+    instagram:"https://instagram.com/bili_ramdani", 
+    email:"mailto:ramdanibili46@gmail.com",
+    linkedin:"https://www.linkedin.com/in/ramdanibili46/",
   },
 ];
 
