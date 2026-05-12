@@ -29,7 +29,7 @@ function Navbar() {
     // logout
     const handleLogout = () => {
         localStorage.removeItem("currentUser");
-        navigate("/login-user");
+        navigate("/");
     };
 
     // mengambil inisial nama
@@ -103,8 +103,8 @@ function Navbar() {
             <div className={`nav-links ${isOpen ? "active" : ""}`}>
 
                 <Link
-                    to="/"
-                    className={isActive("/") ? "active" : ""}
+                    to="/home"
+                    className={isActive("/home") ? "active" : ""}
                     onClick={handleLinkClick}
                 >
                     Home

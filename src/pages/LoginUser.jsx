@@ -131,7 +131,7 @@ function LoginUser() {
 
     setTimeout(() => {
 
-      navigate("/");
+      navigate("/home");
 
       window.scrollTo(0, 0);
 
