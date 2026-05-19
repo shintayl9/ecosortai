@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 
 const predictRoutes = require("./src/routes/predictRoutes");
-const historyRoutes = require("./src/routes/historyRoutes");
+const { router: historyRoutes } = require("./src/routes/historyRoutes");
+const feedbackRoutes = require("./src/routes/feedbackRoutes");
 
 const app = express();
 const PORT = 5000;
@@ -11,8 +12,10 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+// routes
 app.use("/history", historyRoutes);
 app.use("/predict", predictRoutes);
+app.use("/feedback", feedbackRoutes);
 
 // route test
 app.get("/", (req, res) => {
